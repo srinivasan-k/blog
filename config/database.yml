@@ -1,0 +1,25 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: blog_development
+  username: postgres
+  password: root
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: blog_test
+  username: postgres
+  password: root
+  host: localhost
+  
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: blog_production
+  username: postgres
+  password: root
+  host: localhost
+  
+  

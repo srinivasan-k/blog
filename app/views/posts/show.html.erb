@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<!--- Below method will be useful for displaying object values is inspect, especially when working with arrays or hashes. This will
+print the object value as a string.  For Example,
+<%= [1, 2, 3, 4, 5].inspect %>
+-->
+
+<%= simple_format @post.to_yaml %>
+<p>
+  <b>Name:</b>
+  <!-- Commented below line used for a normal view file -->
+  <%-# @post.name %>
+  <!-- Below line used for a debugging situations -->
+  <%=h @post.name %>
+</p>
+
+
+<%= debug @post %>
+<p>
+  <b>Title:</b>
+  <!-- Below line used for a debugging situations -->
+    <%=h @post.title %>
+  <!-- Commented below line used for a normal view file -->
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content %>
+</p>
+
+<p> <b>Inspecting the object using inspect method </b><%=h @post.inspect %> </p>
+
+<p>
+<b>Tags:</b>
+<%= @post.tags.map { |t| t.name }.join(", ") %>
+</p>
+
+<h2>Comments</h2>
+<%= render @post.comments %>
+
+<%= render 'comments/form'  %> 
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
